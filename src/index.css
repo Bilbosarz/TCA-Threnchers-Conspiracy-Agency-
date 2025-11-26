@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basic tuning for premium look */
+:root{
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+  --neon: #00ff8a;
+}
+
+/* Smooth font rendering for mobile safari */
+body{
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  background: transparent;
+  color: rgba(255,255,255,0.95);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* glossy container */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+}
+
+/* make transformations GPU-accelerated when used frequently */
+.will-change-transform {
+  will-change: transform, opacity;
+}
+
+/* modal backdrop */
+.modal-backdrop {
+  background: rgba(5,6,8,0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* subtle neon text */
+.neon-text {
+  text-shadow: 0 6px 18px rgba(0,255,138,0.08), 0 2px 6px rgba(0,255,138,0.06);
+}
+
+/* lizard thumbnail blur hover effect */
+.lizard-thumb {
+  transition: transform 280ms cubic-bezier(.2,.9,.2,1), filter 280ms ease;
+  filter: blur(0px);
+}
+.lizard-thumb:hover{
+  transform: scale(1.06);
+  filter: blur(0.6px);
+}
+
+/* small utilities */
+.float-shadow {
+  box-shadow: 0 20px 50px rgba(3,7,18,0.6);
+}
